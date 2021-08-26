@@ -10,6 +10,7 @@ import { DashboardItemComponent } from './dashboard-item/dashboard-item.componen
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { PlaylistModule } from '../playlist/playlist.module';
+import { LayoutModule } from '../layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PlaylistModule } from '../playlist/playlist.module';
     CommonModule,
     DashboardRoutingModule,
     PlaylistModule,
+    LayoutModule,
     MatPaginatorModule,
     MatExpansionModule,
     MatButtonModule,

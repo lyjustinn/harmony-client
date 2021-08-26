@@ -1,15 +1,17 @@
-<div class="dashboard">
-    <h2>Playlists</h2>
-    <mat-paginator
-        [length]="total"
-        [pageSize]="pageSize"
-        [pageSizeOptions]="pageSizeOptions"
-        (page) = "nextPage($event)"
-        aria-label="Select page"
-        class="paginator"
-        >
-    </mat-paginator>
-    <mat-accordion multi>
-        <app-dashboard-item *ngFor="let playlist of playlists" [playlist]="playlist" [uid]="uid"></app-dashboard-item>
-    </mat-accordion>
-</div>
+<app-layout>
+    <div class="dashboard">
+        <h2>Playlists</h2>
+        <mat-paginator
+            [length]="total"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions"
+            (page) = "nextPage($event)"
+            aria-label="Select page"
+            class="paginator"
+            >
+        </mat-paginator>
+        <mat-accordion multi>
+            <app-dashboard-item *ngFor="let playlist of playlists" [playlist]="playlist" [uid]="uid"></app-dashboard-item>
+        </mat-accordion>
+    </div>
+</app-layout>
