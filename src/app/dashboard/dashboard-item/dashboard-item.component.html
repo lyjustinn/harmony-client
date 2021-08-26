@@ -10,8 +10,27 @@
             </mat-panel-description>
         </div>
     </mat-expansion-panel-header>
-    <div>
-        <p>Playlist Created By: <a href="https://open.spotify.com/user/{{playlist.owner.id}}">{{ playlist.owner.display_name}}</a></p>
-        <p>Track Count: {{ playlist.tracks.total }}</p>
+    <div class="details">
+        <div>
+            <p>Playlist Created By: <a class="general-anchor" href="https://open.spotify.com/user/{{playlist.owner.id}}">{{ playlist.owner.display_name}}</a></p>
+            <p>Track Count: {{ playlist.tracks.total }}</p>
+        </div>
+        <div>
+            <a mat-flat-button class="action-buttons" aria-label="View playlist on Spotify" target="_blank" color="accent" href="https://open.spotify.com/playlist/{{playlist.id}}">
+                View on Spotify
+                <mat-icon>open_in_new</mat-icon>
+            </a>
+            <a *ngIf="!disabled" mat-flat-button disabled={{disabled}} class="action-buttons" aria-label="Convert to YouTube playlist" color="primary" href="{{apiUrl}}/{{playlist.id}}">
+                Sync to YouTube
+                <mat-icon>sync</mat-icon>
+            </a>
+            <button *ngIf="disabled" mat-flat-button disabled={{disabled}} class="action-buttons" aria-label="Convert to YouTube playlist" color="primary">
+                Sync to YouTube
+                <mat-icon>sync</mat-icon>
+            </button>
+            <button mat-flat-button class="action-buttons" aria-label="View playlist in more details">
+                <mat-icon>zoom_in</mat-icon>
+            </button>
+        </div>
     </div>
 </mat-expansion-panel>

@@ -10,6 +10,6 @@
         >
     </mat-paginator>
     <mat-accordion multi>
-        <app-dashboard-item *ngFor="let playlist of playlists" [playlist]="playlist"></app-dashboard-item>
+        <app-dashboard-item *ngFor="let playlist of playlists" [playlist]="playlist" [uid]="uid"></app-dashboard-item>
     </mat-accordion>
 </div>

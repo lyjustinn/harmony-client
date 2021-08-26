@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Playlist } from 'src/app/playlist/shared/playlist.model';
 import { PlaylistService } from 'src/app/playlist/shared/playlist.service';
 import {MatPaginator, PageEvent} from '@angular/material/paginator';
+import { PlaylistSet } from 'src/app/playlist/shared/playlist-set.model';
 
 @Component({
   selector: 'app-dashboard-playlists',
@@ -10,6 +11,7 @@ import {MatPaginator, PageEvent} from '@angular/material/paginator';
 })
 export class DashboardPlaylistsComponent implements OnInit {
   playlists : Playlist[] = [];
+  uid: string = "";
   total : number = 0;
   pageNum : number = 0;
   pageEvent : PageEvent;
@@ -22,6 +24,7 @@ export class DashboardPlaylistsComponent implements OnInit {
     this.playlistService.getUserPlaylists(this.pageNum).subscribe(playlists => {
       this.playlists = playlists?.items ?? [];
       this.total = playlists?.total ?? 0;
+      this.uid = playlists?.uid ?? "";
     });
   }
 

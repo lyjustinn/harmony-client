@@ -6,7 +6,7 @@
         margin: 0 1em 0 1em;
     }
 
-    a {
+    .general-anchor {
         text-decoration: none;
         color: #e91e63;
         
@@ -31,11 +31,19 @@
         width: 60%;
     }
 
-    .header {
+    .header, .details {
         display: flex;
         justify-content: flex-start;
         width: 100%;
         align-items: center;
+    }
+
+    .details {
+        justify-content: space-between;
+
+        .action-buttons {
+            margin-left: 1em;
+        }
     }
 
     .description, h3 {

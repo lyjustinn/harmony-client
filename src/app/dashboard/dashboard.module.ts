@@ -6,8 +6,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { DashboardItemComponent } from './dashboard-item/dashboard-item.component';
-
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,9 @@ import { DashboardItemComponent } from './dashboard-item/dashboard-item.componen
     CommonModule,
     DashboardRoutingModule,
     MatPaginatorModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatButtonModule,
+    MatIconModule
   ],
   exports: [
     DashboardComponent
