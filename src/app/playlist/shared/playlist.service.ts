@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { PlaylistSet } from './playlist-set.model';
 import { Playlist } from './playlist.model';
@@ -27,7 +27,11 @@ export class PlaylistService {
 
   getUserPlaylists(pageNum : number) : Observable<PlaylistSet | null> {
     return this.http.get<PlaylistSet>(this.apiUrl + `/api/playlists?page=${pageNum}`, { headers: this.headers, withCredentials: true})
-      .pipe(
-        catchError(this.handleError));
+      .pipe(catchError(this.handleError));
+  }
+
+  getPlaylist(id : string) : Observable<Playlist | null> {
+    return this.http.get<Playlist>(this.apiUrl+`/api/playlists/${id}`, { headers: this.headers, withCredentials: true})
+      .pipe(catchError(this.handleError));
   }
 }

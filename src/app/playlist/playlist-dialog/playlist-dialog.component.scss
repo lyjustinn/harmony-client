@@ -1,0 +1,37 @@
+.playlist-dialog {
+    .table-wrapper {
+        width: 75vw;
+        height: 50vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    table {
+        width: 75vw;
+        table-layout: fixed;
+    }
+
+    th,td {
+        padding: 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .name-col {
+        width: 18.75vw;
+    }
+
+    .artists-col {
+        width: 18.75vw;
+    }
+
+    .album-col {
+        width: 30vw;
+    }
+
+    .duration-col {
+        width: 7.5vw;
+        text-align: center;
+    }
+}

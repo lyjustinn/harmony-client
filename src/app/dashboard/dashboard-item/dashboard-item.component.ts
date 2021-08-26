@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { PlaylistDialogComponent } from 'src/app/playlist/playlist-dialog/playlist-dialog.component';
 import { Playlist } from 'src/app/playlist/shared/playlist.model';
 import { environment } from 'src/environments/environment';
 
@@ -13,7 +15,7 @@ export class DashboardItemComponent implements OnInit {
   apiUrl : string = environment.apiUrl+"/api/playlists/convert/youtube"; 
   disabled : boolean = false;
 
-  constructor() { }
+  constructor(public dialog : MatDialog) { }
 
   ngOnInit(): void {
     this.disabled = this.playlist.owner.id !== this.uid;
@@ -22,6 +24,12 @@ export class DashboardItemComponent implements OnInit {
   decodeHtml(html : string) {
     var doc = new DOMParser().parseFromString(html, "text/html");
     return doc.documentElement.textContent;
+  }
+
+  openDialog() : void {
+    const dialogRef = this.dialog.open(PlaylistDialogComponent, {
+      data: this.playlist
+    });
   }
 
 }

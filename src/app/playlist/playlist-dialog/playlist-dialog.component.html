@@ -1,0 +1,29 @@
+<div class="playlist-dialog">
+    <h2>{{ playlist.name }}</h2>
+    <div class="table-wrapper">
+        <table mat-table [dataSource]="songs" matSort matSortActive="name" matSortDirection="desc" matSortDisableClear>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef class="name-col">Name</th>
+                <td nat-cell *matCellDef="let row" class="name-col">{{row.track.name}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="artists">
+                <th mat-header-cell *matHeaderCellDef class="artists-col">Artists</th>
+                <td nat-cell *matCellDef="let row" class="artists-col">{{getArtists(row.track.artists)}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="album">
+                <th mat-header-cell *matHeaderCellDef class="album-col">Album</th>
+                <td nat-cell *matCellDef="let row" class="album-col">{{row.track.album.name}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="duration">
+                <th mat-header-cell *matHeaderCellDef class="duration-col">Duration</th>
+                <td nat-cell *matCellDef="let row" class="duration-col">{{formatMs(row.track.duration_ms)}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>
