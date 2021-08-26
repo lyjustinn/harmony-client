@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Playlist } from 'src/app/playlist/shared/playlist.model';
 import { PlaylistService } from 'src/app/playlist/shared/playlist.service';
-import {PageEvent} from '@angular/material/paginator';
+import {MatPaginator, PageEvent} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-dashboard-playlists',
@@ -26,9 +26,6 @@ export class DashboardPlaylistsComponent implements OnInit {
   }
 
   nextPage(t : PageEvent) {
-    console.log(t.pageIndex)
-    console.log("emitted")
-
     this.pageNum = t.pageIndex;
     this.playlistService.getUserPlaylists(this.pageNum).subscribe(playlists => {
       this.playlists = playlists?.items ?? [];

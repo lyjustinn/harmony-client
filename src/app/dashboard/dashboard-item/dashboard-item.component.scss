@@ -1,0 +1,46 @@
+.dashboard-item {
+    // margin: 1em 0 1em 0;
+
+    h3 {
+        width: 25%;
+        margin: 0 1em 0 1em;
+    }
+
+    a {
+        text-decoration: none;
+        color: #e91e63;
+        
+        &:visited {
+            color: #e91e63;
+        }
+    }
+
+    .img-container {
+        // height: 40px;
+        width: 10%;
+        max-width: 40px;
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .description {
+        width: 60%;
+    }
+
+    .header {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        align-items: center;
+    }
+
+    .description, h3 {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}

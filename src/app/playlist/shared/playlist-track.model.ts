@@ -1,3 +1,3 @@
 export interface PlaylistTrack {
-    count : number
+    total : number
 }
