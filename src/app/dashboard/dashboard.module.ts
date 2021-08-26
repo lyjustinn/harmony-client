@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardPlaylistsComponent } from './dashboard-playlists/dashboard-playlists.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -13,7 +14,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    MatPaginatorModule
   ],
   exports: [
     DashboardComponent
