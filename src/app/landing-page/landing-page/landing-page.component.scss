@@ -1,0 +1,53 @@
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    .content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        color: #e91e63;
+        font-size: 40px;
+    }
+
+    p {
+        color: white;
+    }
+
+    a {
+        color: #e91e63;
+        text-decoration: none;
+
+        &:visited {
+            color: #e91e63;
+            text-decoration: none;
+        }
+    }
+
+    .footer {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.5em;
+        background-color: #e91e63;
+
+        p {
+            display: inline-block;
+            margin: 0 1em 0 1em;
+        }
+
+        a {
+            color: white;
+
+            &:visited {
+                color: white;
+            }
+        }
+    }
+}

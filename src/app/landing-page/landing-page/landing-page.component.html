@@ -1,2 +1,12 @@
-<p>landing-page works!</p>
-<a href="{{ loginUrl }}">login</a>
+<div class="landing-container">
+    <div class="content">
+        <h1>Harmony</h1>
+        <p>Playlist Synchronization from Spotify to YouTube</p>
+        <a *ngIf="!isSignedIn" href="{{ loginUrl }}">Welcome! Sign in with your Spotify Account to Get Started</a>
+        <a *ngIf="isSignedIn" routerLink="/dashboard">Welcome {{ currentUser?.display_name }}! View your Dashboard to get Started!</a>
+    </div>
+    <footer class="footer">
+        <p>Created by <a href="https://github.com/lyjustinn">Justin Ly</a></p>
+        <p>Made Using the Spotify and Google YouTube v3 APIs</p>
+    </footer>
+</div>
