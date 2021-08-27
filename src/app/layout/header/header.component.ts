@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { CurrentUser } from 'src/app/user/shared/user.model';
 import { UserService } from 'src/app/user/shared/user.service';
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
   currentUser : CurrentUser | null
   pfp : string;
 
-  constructor(private userService : UserService, private authService : AuthService) { }
+  constructor(private userService : UserService, private authService : AuthService, private router : Router) { }
 
   ngOnInit(): void {
     this.userService.getUser().subscribe(x => {
@@ -21,7 +22,10 @@ export class HeaderComponent implements OnInit {
   }
 
   signout():void {
-    this.authService.signout().subscribe(x => console.log("signedout"))
+    this.authService.signout().subscribe(
+      x => this.router.navigate(["/"])
+    );
+    
   }
 
 }
