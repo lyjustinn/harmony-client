@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
@@ -29,5 +29,12 @@ export class AuthService {
       .pipe(catchError(this.handleError));
 
     // return of(true);
+  }
+
+  signout() : Observable<boolean> {
+    let headers = new HttpHeaders({'Credentials': 'Include'});
+
+    return this.http.get<boolean>(this.apiUrl+"/api/auth/signout", { headers, withCredentials: true })
+      .pipe(map(x => true), catchError(this.handleError));
   }
 }

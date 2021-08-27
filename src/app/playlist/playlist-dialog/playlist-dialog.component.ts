@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SongItem } from 'src/app/shared/song.model';
-import { Artist } from 'src/app/shared/user.model';
+import { Artist } from 'src/app/user/shared/user.model';
 import { Playlist } from '../shared/playlist.model';
 import { PlaylistService } from '../shared/playlist.service';
 

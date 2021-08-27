@@ -1,1 +1,12 @@
-<p>header works!</p>
+<header class="header">
+    <a routerLink="/dashboard" routerLinkActive="active" class="logo">Harmony</a>
+    <button mat-button [matMenuTriggerFor]="menu">
+        <div class="user">
+            <p>{{ currentUser?.display_name }}</p>
+            <img src="{{pfp}}" class="image-styles" alt="Cover for user: {{ currentUser?.id }}">
+        </div>
+    </button>
+    <mat-menu #menu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="signout()">Signout</button>
+    </mat-menu>
+</header>

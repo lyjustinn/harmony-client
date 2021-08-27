@@ -1,5 +1,5 @@
 import { Album } from "./album.model";
-import { Artist, Contributor } from "./user.model";
+import { Artist, Contributor } from "../user/shared/user.model";
 
 export interface SongTrack {
     name : string

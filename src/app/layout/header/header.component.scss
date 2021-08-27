@@ -1,0 +1,38 @@
+.header {
+    padding: 1.5em;
+    background-color: #424242;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        color: #e91e63;
+        text-decoration: none;
+        width: max-content;
+        font-size: 26px;
+
+        &:visited {
+            color: #e91e63;
+            text-decoration: none;
+        }
+    }
+
+    .image-styles {
+        margin-left: 1em;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+    }
+
+    .user {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        padding: 5px;
+
+        p {
+            margin: 0;
+            color: white;
+        }
+    }
+}
