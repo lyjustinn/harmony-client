@@ -9,6 +9,6 @@ This server fetches data from the Harmony api and is meant to be used in conjunc
 1. Download the repository
 2. Install [NodeJS](https://nodejs.org/en/ "Install NodeJS") if you haven't already
 3. Run `npm install`
-4. Created a file in the top level directory called `.env`
+4. Make sure you update the environment file if necessary
 5. Run `ng serve`
 
